@@ -1,0 +1,1 @@
+scp -r .\pi-hole\ pi@rp-server:/home/pi

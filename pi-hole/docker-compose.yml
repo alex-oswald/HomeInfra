@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  pihole:
+    container_name: 'pihole'
+    image: 'pihole/pihole:latest'
+    restart: 'unless-stopped'
+    ports:
+      - '53:53/tcp'
+      - '53:53/udp'
+      - '67:67/udp'
+      - '80:80/tcp'
+    environment:
+      ServerIP: '${PIHOLE_IPADDRESS}'
+      VIRTUAL_HOST: '${PIHOLE_HOST}'
+      TZ: '${PIHOLE_TIMEZONE}'
+      WEBPASSWORD: '${PIHOLE_WEBPASSWORD}'
+      # Upstream DNS
+      DNS1: '127.0.0.1'
+      DNS2: '1.1.1.1'
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    cap_add:
+      - 'NET_ADMIN'
