@@ -14,10 +14,10 @@ PIHOLE_TIMEZONE=America/Los_Angeles
 PIHOLE_WEBPASSWORD=
 ```
 
-Copy files to the pi
+Copy files to the pi by executing the `pihole_copy.bat` batch file
 
 ```
-./copy.bat
+./pihole_copy.bat
 ```
 
 On the pi
@@ -27,7 +27,34 @@ cd pi-hole
 docker-compose up -d
 ```
 
+## Traefik & other services
+
+#### Setup
+
+Create environmental variables file in the `traefik` folder.
+
+`.env`
+```bash
+AZUREAD_CLIENTID=
+AZUREAD_CLIENTSECRET=
+CERT_PASSWORD=
+CERT_PATH=/configuration/server.pfx
+```
+
+Copy files to the pi by executing the `traefik_copy.bat` batch file
+
+```
+./traefik_copy.bat
+```
+
+On the pi
+
+```bash
+cd traefik
+docker-compose up -d
+```
+
 #### Todo
 
-- Setup IPv6
-- Setup secure DNS
+- Pi-Hole: Setup IPv6
+- Pi-Hole: Setup secure DNS

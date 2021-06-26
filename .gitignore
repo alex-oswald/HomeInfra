@@ -1,1 +1,7 @@
+etc-pihole/
+etc-dnsmasq.d/
+*.crt
+*.key
+*.pfx
+grafana-data/
 .env
