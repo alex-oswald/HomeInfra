@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  filebrowser:
+    image: 'filebrowser/filebrowser'
+    container_name: 'file_browser'
+    restart: 'unless-stopped'
+    command:
+      - '--noauth'
+    volumes:
+      - 'filebrowser-data:/srv'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.filebrowser.rule=Host(`filebrowser.pi.lan`)'
+      - 'traefik.http.routers.filebrowser.entrypoints=web-secure'
+      - 'traefik.http.routers.filebrowser.service=filebrowserService'
+      - 'traefik.http.services.filebrowserService.loadBalancer.server.port=80'
+      - 'traefik.http.routers.filebrowser.middlewares=simple-auth'
+ 
+volumes:
+  filebrowser-data:
+  
+networks:
+  default:
+    external: true
+    name: homeinfra-net

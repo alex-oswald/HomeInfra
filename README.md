@@ -15,19 +15,37 @@ Perform this process for each Raspberry Pi's SD card.
 
 ## Services
 
+Running on `rp-pihole`
+
 [Pi-Hole](/pi-hole/README.md)
 
-[Traefik & other services](/traefik/README.md)
+Running on `rp-swarm1`
+
+Create a docker network:
+
+```
+docker network create homeinfra-net
+```
+
+[CalendarDisplay](/calendardisplay/README.md)
+
+[FileBrowser](/filebrowser/README.md)
+
+[Grafana](/grafana/README.md)
+
+[Traefik](/traefik/README.md)
+
+[Whoami](/whoami/README.md)
 
 
 ## Raspberry Pi's
 
-| Name | Hostname | IP |
-|-|-|-|
-| Calendar Display | rp-kitchen | 10.10.10.101 |
-| Pi-Hole | rp-pihole | 10.10.10.102 |
-| Octoprint | | 10.10.10.103 |
-| Swarm1 | rp-swarm1 | 10.10.10.111 |
+| Purpose | Name | Hostname | IP |
+|-|-|-|-|
+| Compute | Pi-Hole | rp-pihole | 10.10.10.102 |
+| Compute | Octoprint | | 10.10.10.103 |
+| Compute | Swarm1 | rp-swarm1 | 10.10.10.111 |
+| Display | Calendar Display | rp-display1 | 10.10.10.121 |
 
 
 ## Todo

@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  calendardisplay:
+    image: 'ghcr.io/alex-oswald/homeinfra-calendardisplay:main'
+    container_name: 'calendar_display'
+    restart: 'unless-stopped'
+    volumes:
+      - 'certs-data:/configuration/' # cert location
+    environment:
+      - 'AzureAd__Instance=https://login.microsoftonline.com/'
+      - 'AzureAd__TenantId=common'
+      - 'AzureAd__ClientId=${AZUREAD_CLIENTID}'
+      - 'AzureAd__ClientSecret=${AZUREAD_CLIENTSECRET}'
+      - 'ASPNETCORE_ENVIRONMENT=Production'
+      - 'ASPNETCORE_URLS=https://+:443'
+      - 'ASPNETCORE_Kestrel__Certificates__Default__Password=${CERT_PASSWORD}'
+      - 'ASPNETCORE_Kestrel__Certificates__Default__Path=${CERT_PATH}'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.calendardisplay.rule=Host(`calendar.pi.lan`)'
+      - 'traefik.http.routers.calendardisplay.entrypoints=web-secure'
+      - 'traefik.http.routers.calendardisplay.service=calendardisplayService'
+      - 'traefik.http.services.calendardisplayService.loadBalancer.server.port=443'
+      - 'traefik.http.services.calendardisplayService.loadbalancer.server.scheme=https'
+
+volumes:
+  certs-data:
+        
+networks:
+  default:
+    external: true
+    name: homeinfra-net

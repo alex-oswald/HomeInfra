@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  grafana:
+    image: 'grafana/grafana'
+    container_name: 'grafana'
+    restart: 'unless-stopped'
+    volumes:
+      - 'grafana-data:/var/lib/grafana'
+    user: '0' # i had to use 0, not 104 or what 'id -u' returns
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.grafana.rule=Host(`grafana.pi.lan`)'
+      - 'traefik.http.routers.grafana.entrypoints=web-secure'
+      - 'traefik.http.routers.grafana.service=grafanaService'
+      - 'traefik.http.services.grafanaService.loadBalancer.server.port=3000'
+
+volumes:
+  grafana-data:
+
+networks:
+  default:
+    external: true
+    name: homeinfra-net
