@@ -41,3 +41,14 @@ Start the service.
 cd calendardisplay
 docker-compose up -d
 ```
+
+
+## Docker Storage
+
+Bind mount
+
+```
+.
+└── configuration
+    └── server.pfx
+```

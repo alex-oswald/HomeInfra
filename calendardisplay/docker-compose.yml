@@ -6,7 +6,7 @@ services:
     container_name: 'calendar_display'
     restart: 'unless-stopped'
     volumes:
-      - 'certs-data:/configuration/' # cert location
+      - './configuration/:/configuration/' # cert location
     environment:
       - 'AzureAd__Instance=https://login.microsoftonline.com/'
       - 'AzureAd__TenantId=common'
@@ -23,10 +23,7 @@ services:
       - 'traefik.http.routers.calendardisplay.service=calendardisplayService'
       - 'traefik.http.services.calendardisplayService.loadBalancer.server.port=443'
       - 'traefik.http.services.calendardisplayService.loadbalancer.server.scheme=https'
-
-volumes:
-  certs-data:
-        
+      
 networks:
   default:
     external: true
