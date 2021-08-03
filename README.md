@@ -29,13 +29,13 @@ PIHOLE_WEBPASSWORD=
 Copy files to the pi by executing the `pihole_copy.bat` batch file
 
 ```
+cd pi-hole
 ./pihole_copy.bat
 ```
 
 On the pi
 
 ```bash
-cd pi-hole
 docker-compose up -d
 ```
 
@@ -43,9 +43,8 @@ docker-compose up -d
 
 #### Setup
 
-Create environmental variables file in the `traefik` folder.
+Create environmental variables `.env` file in the `traefik` folder.
 
-`.env`
 ```bash
 AZUREAD_CLIENTID=
 AZUREAD_CLIENTSECRET=
@@ -56,13 +55,15 @@ CERT_PATH=/configuration/server.pfx
 Copy files to the pi by executing the `traefik_copy.bat` batch file
 
 ```
+cd traefik
 ./traefik_copy.bat
 ```
 
 On the pi
 
 ```bash
-cd traefik
+mkdir HomeInfra
+cd HomeInfra
 docker-compose up -d
 ```
 
