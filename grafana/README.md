@@ -32,3 +32,8 @@ Start the service.
 cd grafana
 docker-compose up -d
 ```
+
+
+## Docker Storage
+
+Volumes

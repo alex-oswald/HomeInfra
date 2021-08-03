@@ -32,3 +32,8 @@ Start the service.
 cd filebrowser
 docker-compose up -d
 ```
+
+
+## Docker Storage
+
+Volumes

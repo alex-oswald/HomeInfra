@@ -36,3 +36,8 @@ Start the service.
 ```bash
 docker-compose up -d
 ```
+
+
+## Docker Storage
+
+Volumes

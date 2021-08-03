@@ -36,6 +36,14 @@ docker-compose up -d
 ```
 
 
-## Docker Volumes
+## Docker Storage
 
 Bind mount
+
+```
+.
+└── configuration
+    ├── traefik_dynamic.toml
+    ├── server.crt
+    └── server.key
+```
