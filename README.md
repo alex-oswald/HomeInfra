@@ -40,12 +40,12 @@ docker network create homeinfra-net
 
 ## Raspberry Pi's
 
-| Name | Hostname | IP |
-|-|-|-|
-| Calendar Display | rp-kitchen | 10.10.10.101 |
-| Pi-Hole | rp-pihole | 10.10.10.102 |
-| Octoprint | | 10.10.10.103 |
-| Swarm1 | rp-swarm1 | 10.10.10.111 |
+| Purpose | Name | Hostname | IP |
+|-|-|-|-|
+| Compute | Pi-Hole | rp-pihole | 10.10.10.102 |
+| Compute | Octoprint | | 10.10.10.103 |
+| Compute | Swarm1 | rp-swarm1 | 10.10.10.111 |
+| Display | Calendar Display | rp-display1 | 10.10.10.121 |
 
 
 ## Todo
