@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  whoami:
+    image: 'containous/whoami'
+    container_name: 'who_am_i'
+    restart: 'unless-stopped'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.whoami.rule=Host(`whoami.pi.lan`)'
+      - 'traefik.http.routers.whoami.entrypoints=web-secure'
+ 
+networks:
+  default:
+    external: true
+    name: homeinfra-net

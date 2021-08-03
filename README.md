@@ -15,9 +15,27 @@ Perform this process for each Raspberry Pi's SD card.
 
 ## Services
 
+Running on `rp-pihole`
+
 [Pi-Hole](/pi-hole/README.md)
 
-[Traefik & other services](/traefik/README.md)
+Running on `rp-swarm1`
+
+Create a docker network:
+
+```
+docker network create homeinfra-net
+```
+
+[CalendarDisplay](/calendardisplay/README.md)
+
+[FileBrowser](/filebrowser/README.md)
+
+[Grafana](/grafana/README.md)
+
+[Traefik](/traefik/README.md)
+
+[Whoami](/whoami/README.md)
 
 
 ## Raspberry Pi's

@@ -22,10 +22,10 @@ PIHOLE_TIMEZONE=America/Los_Angeles
 PIHOLE_WEBPASSWORD=
 ```
 
-Copy files to the pi by executing the `pihole_copy.bat` batch file
+Copy files to the pi by executing the `copy.bat` batch file
 
 ```
-./pihole_copy.bat
+./copy.bat
 ```
 
 
