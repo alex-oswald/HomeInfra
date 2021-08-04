@@ -55,3 +55,12 @@ docker network create homeinfra-net
     - Setup secure DNS
 - Docker
     -Volume backup/restore
+
+
+## Troubleshooting
+
+Docker logs
+
+```
+standard_init_linux.go:228: exec user process caused: exec format error
+```
