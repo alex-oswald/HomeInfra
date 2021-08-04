@@ -6,7 +6,7 @@
 Open terminal and navigate to the `filebrowser` folder.
 
 ```
-cd whoami
+cd filebrowser
 ```
 
 Copy files to the pi by executing the `copy.bat` batch file

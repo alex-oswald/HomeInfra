@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  portainer:
+    image: 'portainer/portainer-ce:2.0.0'
+    command: '-H unix:///var/run/docker.sock'
+    restart: 'always'
+    volumes:
+        - '/var/run/docker.sock:/var/run/docker.sock'
+        - 'portainer-data:/data'
+    labels:
+        # Frontend
+        - 'traefik.enable=true'
+        - 'traefik.http.routers.portainer.rule=Host(`portainer.pi.lan`)'
+        - 'traefik.http.routers.portainer.entrypoints=web-secure'
+        - 'traefik.http.services.portainerService.loadbalancer.server.port=9000'
+        - 'traefik.http.routers.portainer.service=portainerService'
+        #- 'traefik.http.routers.portainer.tls.certresolver=leresolver'
+        
+        # Edge (untested)
+        #- 'traefik.http.routers.portainerEdge.rule=Host(`edge.pi.lan`)'
+        #- 'traefik.http.routers.portainerEdge.entrypoints=websecure'
+        #- 'traefik.http.services.portainerEdgeService.loadbalancer.server.port=8000'
+        #- 'traefik.http.routers.portainerEdge.service=portainerEdgeService'
+        #- 'traefik.http.routers.portainerEdge.tls.certresolver=leresolver'
+
+volumes:
+    portainer-data:
+
+networks:
+  default:
+    external: true
+    name: homeinfra-net
