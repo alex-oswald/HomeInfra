@@ -6,3 +6,6 @@
   [http.services.piholeService.loadBalancer]
     [[http.services.piholeService.loadBalancer.servers]]
       url = "http://10.10.10.102:80"
+  [http.services.octopiService.loadBalancer]
+    [[http.services.octopiService.loadBalancer.servers]]
+      url = "http://10.10.10.103:80"

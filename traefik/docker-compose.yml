@@ -38,6 +38,10 @@ services:
       - 'traefik.http.routers.pihole.service=piholeService@file'
       - 'traefik.http.routers.pihole.middlewares=pihole-prefix'
       - 'traefik.http.middlewares.pihole-prefix.addPrefix.prefix=/admin'
+      # Octopi (external)
+      - 'traefik.http.routers.octopi.rule=Host(`octopi.pi.lan`)'
+      - 'traefik.http.routers.octopi.entrypoints=web-secure'
+      - 'traefik.http.routers.octopi.service=octopiService@file'
 
 networks:
   default:
