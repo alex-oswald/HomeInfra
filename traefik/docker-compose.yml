@@ -32,6 +32,12 @@ services:
       - 'traefik.http.routers.api.middlewares=simple-auth'
       - 'traefik.http.routers.api.tls=true'
       - 'traefik.http.middlewares.simple-auth.basicAuth.users=admin:$$apr1$$dHFJHlhW$$N8MAT8xTG11j70VuENCY81'
+      # Pi-Hole (external)
+      - 'traefik.http.routers.pihole.rule=Host(`pihole.pi.lan`)'
+      - 'traefik.http.routers.pihole.entrypoints=web-secure'
+      - 'traefik.http.routers.pihole.service=piholeService@file'
+      - 'traefik.http.routers.pihole.middlewares=pihole-prefix'
+      - 'traefik.http.middlewares.pihole-prefix.addPrefix.prefix=/admin'
 
 networks:
   default:

@@ -47,3 +47,8 @@ Bind mount
     ├── server.crt
     └── server.key
 ```
+
+
+## References
+
+https://doc.traefik.io/traefik/routing/services/#servers
