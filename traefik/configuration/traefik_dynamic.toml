@@ -1,3 +1,8 @@
 [[tls.certificates]]
   certFile = "/configuration/server.crt"
   keyFile = "/configuration/server.key"
+
+[http.services]
+  [http.services.piholeService.loadBalancer]
+    [[http.services.piholeService.loadBalancer.servers]]
+      url = "http://10.10.10.102:80"
