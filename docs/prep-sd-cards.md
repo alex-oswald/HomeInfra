@@ -2,6 +2,7 @@
 
 We will image SD cards and make sure they are updated and have docker and docker compose installed.
 
+
 ## Imaging
 
 Image with Raspberry Pi OS Lite (32-bit)
@@ -11,12 +12,18 @@ Press `Ctrl+Shift+X` to setup *Advanced options*
 - Configure Wifi
 - Set locale settings
 
+>If you want to run 64-bit ARM containers download the beta Raspberry Pi OS Lite 64-bit image.
+>Use the imager, except choose `Use custom` from the OS list to choose the `.img` file you downloaded.
+>
+>https://downloads.raspberrypi.org/raspios_arm64/images/
+
 SSH into the Pi
 
 Update & upgrade
 ```bash
 sudo apt-get update && sudo apt-get upgrade
 ```
+
 
 ## Install docker
 
@@ -44,6 +51,7 @@ Check installation
 ```bash
 docker version
 ```
+
 
 ## Install docker compose
 
