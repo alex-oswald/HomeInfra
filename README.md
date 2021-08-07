@@ -46,8 +46,8 @@ docker network create homeinfra-net
 
 | Purpose | Name | Hostname | IP |
 |-|-|-|-|
-| Compute | Pi-Hole | rp-pihole | 10.10.10.102 |
-| Compute | Octoprint | - | 10.10.10.103 |
+| Compute | Pi-Hole | rp-pihole | 10.10.10.2 |
+| Compute | Octoprint | - | 10.10.10.101 |
 | Compute | Swarm1 | rp-swarm1 | 10.10.10.111 |
 | Compute | Swarm2 | rp-swarm2 | 10.10.10.112 |
 | Display | Calendar Display | rp-display1 | 10.10.10.121 |
