@@ -1,5 +1,6 @@
-# CalendarDisplay
+# HomeInfra-CalendarDisplay
 
+https://github.com/alex-oswald/HomeInfra-CalendarDisplay
 
 ## Setup from dev machine
 
