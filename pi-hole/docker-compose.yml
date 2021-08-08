@@ -16,6 +16,7 @@ services:
       VIRTUAL_HOST: '${PIHOLE_HOST}'
       TZ: '${PIHOLE_TIMEZONE}'
       WEBPASSWORD: '${PIHOLE_WEBPASSWORD}'
+      DNSMASQ_LISTENING: all
       # Upstream DNS
       DNS1: '127.0.0.1'
       DNS2: '1.1.1.1'
