@@ -12,10 +12,8 @@ services:
       TZ: '${PIHOLE_TIMEZONE}'
       WEBPASSWORD: '${PIHOLE_WEBPASSWORD}'
       DNSMASQ_LISTENING: all
-      # Upstream DNS
       DNS1: '127.0.0.1'
       DNS2: '1.1.1.1'
-    # Volumes store your data between container upgrades
     volumes:
       - 'pihole-data:/etc/pihole/'
       - 'pihole-dnsmasq:/etc/dnsmasq.d/'

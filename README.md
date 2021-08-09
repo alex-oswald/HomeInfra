@@ -62,10 +62,24 @@ docker network create homeinfra-net
     -Volume backup/restore
 
 
-## Troubleshooting
+## Useful commands
 
-Docker logs
+#### Update WiFi SSID and/or password
 
 ```
-standard_init_linux.go:228: exec user process caused: exec format error
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+#### Update container to the latest version
+
+Pull the latest image.
+
+```
+docker-compose pull
+```
+
+Restart the container to use the updated image
+
+```
+docker-compose restart
 ```
