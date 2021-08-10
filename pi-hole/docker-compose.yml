@@ -5,13 +5,14 @@ services:
     container_name: 'pihole'
     image: 'pihole/pihole:latest'
     restart: 'unless-stopped'
-    network_mode: host
+    network_mode: 'host'
     environment:
       ServerIP: '${PIHOLE_IPADDRESS}'
       VIRTUAL_HOST: '${PIHOLE_HOST}'
       TZ: '${PIHOLE_TIMEZONE}'
       WEBPASSWORD: '${PIHOLE_WEBPASSWORD}'
-      DNSMASQ_LISTENING: all
+      INTERFACE: 'wlan0'
+      #DNSMASQ_LISTENING: 'all'
       DNS1: '127.0.0.1'
       DNS2: '1.1.1.1'
     volumes:
