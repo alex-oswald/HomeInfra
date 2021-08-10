@@ -27,21 +27,21 @@ Create a docker network:
 docker network create homeinfra-net
 ```
 
-[CalendarDisplay](/calendardisplay/README.md)
+[CalendarDisplay](/cluster/calendardisplay/README.md)
 
-[FileBrowser](/filebrowser/README.md)
+[FileBrowser](/cluster/filebrowser/README.md)
 
-[Grafana](/grafana/README.md)
+[Grafana](/cluster/grafana/README.md)
 
-[Heimdall](/heimdall/README.md)
+[Heimdall](/cluster/heimdall/README.md)
 
-[Plex](/plex/README.md)
+[Plex](/cluster/plex/README.md)
 
-[Portainer](/portainer/README.md)
+[Portainer](/cluster/portainer/README.md)
 
-[Traefik](/traefik/README.md)
+[Traefik](/cluster/traefik/README.md)
 
-[Whoami](/whoami/README.md)
+[Whoami](/cluster/whoami/README.md)
 
 
 ## Raspberry Pi's
