@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  rabbitmq:
+    image: 'rabbitmq:3.9.3-management'
+    container_name: 'rabbitmq'
+    restart: 'unless-stopped'
+    volumes:
+        - 'rabbitmq-data:/var/lib/rabbitmq'
+    labels:
+        - 'traefik.enable=true'
+        - 'traefik.http.routers.rabbitmq.rule=Host(`messages.pi.lan`)'
+        - 'traefik.http.routers.rabbitmq.entrypoints=web-secure'
+        - 'traefik.http.routers.rabbitmq.service=rabbitmqService'
+        - 'traefik.http.services.rabbitmqService.loadbalancer.server.port=5672'
+
+        # Management
+        - 'traefik.http.routers.rabbitmqMgt.rule=Host(`rabbitmq.pi.lan`)'
+        - 'traefik.http.routers.rabbitmqMgt.entrypoints=web-secure'
+        - 'traefik.http.routers.rabbitmqMgt.service=rabbitmqMgtService'
+        - 'traefik.http.services.rabbitmqMgtService.loadbalancer.server.port=15672'
+
+volumes:
+    rabbitmq-data:
+
+networks:
+  default:
+    external: true
+    name: homeinfra-net

@@ -1,5 +1,7 @@
 # Home Infrastructure
 
+Example home infrastructure ran on Raspberry Pi's. I use some of this myself, a lot are examples.
+
 
 ## Raspberry Pi Setup
 
@@ -38,6 +40,8 @@ docker network create homeinfra-net
 [Plex](/cluster/plex/README.md)
 
 [Portainer](/cluster/portainer/README.md)
+
+[RabbitMQ](/cluster/rabbitmq/README.md)
 
 [Traefik](/cluster/traefik/README.md)
 
