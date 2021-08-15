@@ -11,7 +11,7 @@ services:
       VIRTUAL_HOST: '${PIHOLE_HOST}'
       TZ: '${PIHOLE_TIMEZONE}'
       WEBPASSWORD: '${PIHOLE_WEBPASSWORD}'
-      INTERFACE: 'wlan0'
+      INTERFACE: 'eth0'
       #DNSMASQ_LISTENING: 'all'
       DNS1: '127.0.0.1'
       DNS2: '1.1.1.1'

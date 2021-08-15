@@ -43,19 +43,19 @@ Add the following:
 ```
 # It is possible to fall back to a static IP if DHCP fails:
 # define static profile
-profile static_wlan0
+profile static_eth0
 static ip_address=10.10.10.2/24
 static routers=10.10.10.1
 static domain_name_servers=10.10.10.1
 
-# fallback to static profile on wlan0
-interface wlan0
-fallback static_wlan0
+# fallback to static profile on eth0
+interface eth0
+fallback static_eth0
 ```
 
 Where 10.10.10.1 is the routers IP address, and 10.10.10.2 is Pi-Holes IP address.
 
->I'm using the wireless interface `wlan0`. If you are using the Ethernet port, replace instances of `wlan0` with `eth0`.
+>If you are using the wireless interface `wlan0`, replace instances of `eth0` with `wlan0`. Don't forget to check your compose file.
 
 Start the service.
 
