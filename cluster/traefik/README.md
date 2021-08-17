@@ -11,6 +11,13 @@ Open terminal and navigate to the `traefik` folder.
 cd traefik
 ```
 
+Create environmental variables `.env` file in the `calendardisplay` folder.
+
+```bash
+BASICAUTH_USER=admin
+BASICAUTH_PASSWORD=password
+```
+
 Copy files to the pi by executing the `copy.bat` batch file
 
 ```

@@ -31,7 +31,7 @@ services:
       - 'traefik.http.routers.api.service=api@internal'
       - 'traefik.http.routers.api.middlewares=simple-auth'
       - 'traefik.http.routers.api.tls=true'
-      - 'traefik.http.middlewares.simple-auth.basicAuth.users=admin:$$apr1$$dHFJHlhW$$N8MAT8xTG11j70VuENCY81'
+      - 'traefik.http.middlewares.simple-auth.basicAuth.users=${BASICAUTH_USER}:${BASICAUTH_PASSWORD}'
       # Pi-Hole (external)
       - 'traefik.http.routers.pihole.rule=Host(`pihole.pi.lan`)'
       - 'traefik.http.routers.pihole.entrypoints=web-secure'
