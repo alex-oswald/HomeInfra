@@ -20,8 +20,9 @@ Press `Ctrl+Shift+X` to setup *Advanced options*
 SSH into the Pi
 
 Update & upgrade
+
 ```bash
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
 
@@ -44,10 +45,14 @@ rm get-docker.sh
 Setup non-root user to Docker group so we can execute docker without `sudo`. Logout and back in.
 ```bash
 sudo usermod -aG docker pi
+```
+
+```bash
 logout
 ```
 
 Check installation
+
 ```bash
 docker version
 ```
@@ -56,11 +61,11 @@ docker version
 ## Install docker compose
 
 ```bash
-sudo apt install -y python3-pip libffi-dev
-sudo pip3 install docker-compose
+sudo apt install -y python3-pip libffi-dev && sudo pip3 install docker-compose
 ```
 
 Check installation
+
 ```bash
 docker-compose version
 ```
