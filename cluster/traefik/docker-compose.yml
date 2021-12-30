@@ -42,6 +42,10 @@ services:
       - 'traefik.http.routers.octopi.rule=Host(`octopi.pi.lan`)'
       - 'traefik.http.routers.octopi.entrypoints=web-secure'
       - 'traefik.http.routers.octopi.service=octopiService@file'
+      # Home Assistant (external)
+      - 'traefik.http.routers.homeassistant.rule=Host(`home.pi.lan`)'
+      - 'traefik.http.routers.homeassistant.entrypoints=web-secure'
+      - 'traefik.http.routers.homeassistant.service=homeassistantService@file'
 
 networks:
   default:

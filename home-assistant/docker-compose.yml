@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  home-assistant:
+    image: 'ghcr.io/home-assistant/home-assistant:stable'
+    container_name: 'home-assistant'
+    restart: 'unless-stopped'
+    privileged: true
+    network_mode: host
+    volumes:
+      - './config:/config'
+      - '/etc/localtime:/etc/localtime:ro'
+
+networks:
+  default:
+    external: true
+    name: homeinfra-net

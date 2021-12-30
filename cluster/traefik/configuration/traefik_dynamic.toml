@@ -9,3 +9,6 @@
   [http.services.octopiService.loadBalancer]
     [[http.services.octopiService.loadBalancer.servers]]
       url = "http://10.10.10.101:80"
+  [http.services.homeassistantService.loadBalancer]
+    [[http.services.homeassistantService.loadBalancer.servers]]
+      url = "http://10.10.10.126:8123"

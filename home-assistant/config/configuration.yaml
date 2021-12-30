@@ -1,0 +1,11 @@
+default_config:
+
+homeassistant:
+  currency: USD
+  time_zone: "America/Los_Angeles"
+  internal_url: "https://home.pi.lan"
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.10.10.111 # IP address of the proxy server
