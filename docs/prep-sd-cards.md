@@ -20,9 +20,9 @@ Press `Ctrl+Shift+X` to setup *Advanced options*
 SSH into the Pi
 
 Update & upgrade
+
 ```bash
-sudo apt-get update -y && \
-sudo apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
 
@@ -33,8 +33,7 @@ Download Docker installation script & execute
 https://github.com/docker/docker-install/blob/master/install.sh
 
 ```bash
-curl -fsSL https://get.docker.com -o get-docker.sh && \
-sudo sh get-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 ```
 
 We can delete the file now
@@ -45,11 +44,15 @@ rm get-docker.sh
 
 Setup non-root user to Docker group so we can execute docker without `sudo`. Logout and back in.
 ```bash
-sudo usermod -aG docker pi && \
+sudo usermod -aG docker pi
+```
+
+```bash
 logout
 ```
 
 Check installation
+
 ```bash
 docker version
 ```
@@ -58,11 +61,11 @@ docker version
 ## Install docker compose
 
 ```bash
-sudo apt install -y python3-pip libffi-dev &&\
-sudo pip3 install docker-compose
+sudo apt install -y python3-pip libffi-dev && sudo pip3 install docker-compose
 ```
 
 Check installation
+
 ```bash
 docker-compose version
 ```
