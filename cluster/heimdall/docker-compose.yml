@@ -10,16 +10,16 @@ services:
       - 'PGID=1000'
       - 'TZ=America/Los_Angeles'
     volumes:
-        - 'heimdall-data:/config'
+      - 'heimdall-data:/config'
     labels:
-        - 'traefik.enable=true'
-        - 'traefik.http.routers.heimdall.rule=Host(`pi.lan`)'
-        - 'traefik.http.routers.heimdall.entrypoints=web-secure'
-        - 'traefik.http.routers.heimdall.service=heimdallService'
-        - 'traefik.http.services.heimdallService.loadBalancer.server.port=80'
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.heimdall.rule=Host(`pi.lan`)'
+      - 'traefik.http.routers.heimdall.entrypoints=web-secure'
+      - 'traefik.http.routers.heimdall.service=heimdallService'
+      - 'traefik.http.services.heimdallService.loadBalancer.server.port=80'
 
 volumes:
-    heimdall-data:
+  heimdall-data:
 
 networks:
   default:

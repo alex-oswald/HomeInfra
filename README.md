@@ -50,21 +50,15 @@ docker network create homeinfra-net
 
 ## Raspberry Pi's
 
-| Purpose | Name | Hostname | IP |
-|-|-|-|-|
-| Compute | Pi-Hole | rp-pihole | 10.10.10.2 |
-| Compute | Octoprint | - | 10.10.10.101 |
-| Compute | Swarm1 | rp-swarm1 | 10.10.10.111 |
-| Display | Calendar Display | rp-display1 | 10.10.10.121 |
+| Name | Hostname | IP |
+|-|-|-|
+| Pi-Hole | rp-pihole | 10.10.10.2 |
+| Octoprint | - | 10.10.10.101 |
+| Swarm1 | rp-swarm1 | 10.10.10.111 |
+| Calendar Display | rp-display1 | 10.10.10.121 |
+| Home Assistant | rp-homeassistant | 10.10.10.126
 
 
-## Todo
-
-- Pi-Hole
-    - Setup IPv6
-    - Setup secure DNS
-- Docker
-    -Volume backup/restore
 
 
 ## Useful commands
@@ -73,18 +67,4 @@ docker network create homeinfra-net
 
 ```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-```
-
-#### Update container to the latest version
-
-Pull the latest image.
-
-```
-docker-compose pull
-```
-
-Restart the container to use the updated image
-
-```
-docker-compose restart
 ```

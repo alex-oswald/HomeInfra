@@ -6,12 +6,12 @@ services:
     container_name: 'plex'
     restart: 'unless-stopped'
     environment:
-        - PGID=1000
-        - PUID=1000
-        - TZ=PST
-        - VERSION=docker
-        - ADVERTISE_IP="https://plex.pi.lan"
-        - SYSCALL_MAX_ENABLED=1
+      - PGID=1000
+      - PUID=1000
+      - TZ=PST
+      - VERSION=docker
+      - ADVERTISE_IP="https://plex.pi.lan"
+      - SYSCALL_MAX_ENABLED=1
     ports:
       - 32400:32400/tcp
       - 32400:32400/udp
