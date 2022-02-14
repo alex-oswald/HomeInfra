@@ -34,6 +34,11 @@ docker-compose up -d
 ```
 
 
+## Config
+
+I'm using Wyze cameras with RTSP firmware. See [this post](https://support.wyze.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP) for instructions and download links.
+
+
 ## Docker Storage
 
 Volumes

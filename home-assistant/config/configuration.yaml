@@ -9,3 +9,28 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.10.10.111 # IP address of the proxy server
+
+camera:
+  - platform: ffmpeg
+    name: upstairs-backdoor
+    input: !secret upstairs_backdoor_url
+
+  - platform: ffmpeg
+    name: front-door
+    input: !secret front_door_url
+
+  - platform: ffmpeg
+    name: garage-cam
+    input: !secret garage_cam_url
+
+  - platform: ffmpeg
+    name: driveway
+    input: !secret driveway_url
+
+  - platform: ffmpeg
+    name: house-side-gate
+    input: !secret house_side_gate
+
+  - platform: ffmpeg
+    name: house-side-shed
+    input: !secret house_side_shed

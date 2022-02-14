@@ -5,3 +5,4 @@ etc-dnsmasq.d/
 *.pfx
 grafana-data/
 .env
+secrets.yaml
